@@ -3,18 +3,22 @@ CP1404/CP5632 - Practical
 Broken program to determine score status
 """
 
-# TODO: Fix this!
-
-from typing import *
+from random import randint as ri
 def main()->None:
     user_score = float(input("Enter score: "))
+    print(generate_result(user_score))
+
+    random_score = ri(0, 100)
+    print(f"Random generated score is {random_score}")
+    print(generate_result(random_score))
+    print("End program")
+def generate_result(user_score):
     if user_score >= 0 and user_score <= 100:
         if user_score >= 90 and user_score <=100:
-            print("Excellent")
+            return "Excellent"
         elif user_score >= 50 and user_score < 90:
-            print("pass")
+            return "pass"
         elif user_score >= 0 and user_score < 50:
-            print("bad")
-    print("End program")
+            return "bad"
 if __name__ == '__main__':
     main()

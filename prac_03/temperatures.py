@@ -3,10 +3,6 @@ CP1404/CP5632 - Practical
 Pseudocode for temperature conversion
 """
 
-def celsius_to_fahrenheit(celsius):
-    return float(celsius * 9.0 / 5 + 32)
-def fahrenheit_to_celsius(fahrenheit):
-    return float(5.0 / 9.0 * (fahrenheit - 32.0))
 def main():
     MENU = """C - Convert Celsius to Fahrenheit
     F - Convert Fahrenheit to Celsius
@@ -27,4 +23,8 @@ def main():
         print(MENU)
         choice = input(">>> ").upper()
     print("Thank you.")
+def celsius_to_fahrenheit(celsius):
+    return float(celsius * 9.0 / 5 + 32)
+def fahrenheit_to_celsius(fahrenheit):
+    return float(5.0 / 9.0 * (fahrenheit - 32.0))
 main()
