@@ -1,6 +1,5 @@
 """
-CP1404/CP5632 - Practical
-Broken program to determine score status
+Determine score status base on score
 """
 
 from random import randint as ri
