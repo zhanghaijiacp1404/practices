@@ -5,11 +5,15 @@ Rules for each line:
 2-Each line of numbers should be displayed in sorted (ascending) order.
 """
 from random import randint as ri
+
+RANDOM_NUMBER_LOWER_BOUND = 1
+RANDOM_NUMBER_UPPER_BOUND = 45
+
 def main():
     """Main function body"""
-    RANDOM_NUMBER_LOWER_BOUND = 1
-    RANDOM_NUMBER_UPPER_BOUND = 45
     NUMBER_OF_QUICK_PICKS = int(input("How many quick picks? "))
+    while NUMBER_OF_QUICK_PICKS < 0:
+        NUMBER_OF_QUICK_PICKS = int(input("Number of quick picks cannot be smaller than 0. Re-enter:"))
     for i in range(NUMBER_OF_QUICK_PICKS):
         pass
         temp_list = []
