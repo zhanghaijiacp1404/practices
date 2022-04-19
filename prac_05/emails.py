@@ -2,6 +2,8 @@
 Store the user's email addresses as keys, user's names as values
 into a dictionary
 """
+
+
 def main():
     """Start program"""
     email_to_name = {}
