@@ -11,14 +11,15 @@ CODE_TO_NAME = {"QLD": "Queensland", "NSW": "New South Wales",
 print(CODE_TO_NAME)
 
 # Promote the user to enter the state code
-state_code = input("Enter short state: ")
+state_code = input("Enter short state: ").upper()
 while state_code != "":
     if state_code in CODE_TO_NAME:
         print(state_code, "is", CODE_TO_NAME[state_code])
     else:
         print("Invalid short state")
-    state_code = input("Enter short state: ")
+    state_code = input("Enter short state: ").upper()
 
 # Display items in code to name dictionary
+print()
 for key, value in CODE_TO_NAME.items():
     print(f"{key:<3} is {value}")
