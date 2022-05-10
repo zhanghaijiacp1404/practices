@@ -1,22 +1,32 @@
+"""
+Dynamic Widgets / Labels program
+"""
+
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.label import Label
-from kivy.properties import StringProperty
 
 
 class DynamicLabelsApp(App):
+    """DynamicLabelApp class"""
     def __init__(self, **kwargs):
+        """Start to initialize the app"""
         super().__init__(**kwargs)
-        self.name_to_phone = {"Bob Brown": "0414144411", "Cat Cyan": "0441411211", "Oren Ochre": "0432123456"}
+        # Suppose we have a name list like this:
+        self.names = ["Jack", "Annie", "Bob", "Ken"]
 
     def build(self):
+        """Build the GUI app based on .kv file"""
         self.title = "Dynamic Labels"
         self.root = Builder.load_file("dynamic_labels.kv")
         self.create_labels()
         return self.root
 
     def create_labels(self):
-        for name in self.name_to_phone:
+        """Start creating dynamic labels"""
+        for name in self.names:
             self.root.ids.main.add_widget(Label(text=name))
 
+
+# Start running
 DynamicLabelsApp().run()

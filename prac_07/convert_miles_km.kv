@@ -6,21 +6,20 @@ BoxLayout:
             id: input_number
             font_size: 48
             on_text: app.handle_convert()
+
         BoxLayout:
             orientation: 'vertical'
             size_hint_x: 0.25
             Button:
                 text: 'Up'
+                font_size: 30
                 on_press: app.handle_increment(1)
             Button:
                 text: 'Down'
+                font_size: 30
                 on_press: app.handle_increment(-1)
-    #Button:
-     #   id: convert
-      #  text: 'Convert m to km'
-       # font_size: 48
-        #on_press: app.handle_convert()
     Label:
         id: output_label
+        text: app.message
         color: (1,1,0,1)
         font_size: 48
