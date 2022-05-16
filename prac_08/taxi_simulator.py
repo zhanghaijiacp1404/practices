@@ -7,7 +7,7 @@ MENU = "q)uit, c)hoose taxi, d)rive"
 
 
 def display_taxis(taxis):
-    """Dis play the detail information for each object in the list"""
+    """Display the detail information for each object in the list"""
     for index, taxi in enumerate(taxis, 0):
         print(f"{index} - {taxi}")
 
@@ -49,6 +49,7 @@ def main():
                 bill_to_date += temp_taxi.get_fare()
         else:
             print("Invalid option")
+        # Show the user's bill to date
         print(f"Bill to date: ${bill_to_date:.2f}")
         print(MENU)
         user_choice = input(">>> ").lower()
