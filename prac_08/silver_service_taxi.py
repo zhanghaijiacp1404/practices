@@ -4,10 +4,10 @@ from prac_08.taxi import Taxi
 class SilverServiceTaxi(Taxi):
     flagfall = 4.5
 
-    def __init__(self,fanciness,**kwargs):
-        self.fanciness = fanciness
-        self.price_per_km *= fanciness
+    def __init__(self,fanciness, **kwargs):
         super().__init__(**kwargs)
+        self.price_per_km *= fanciness
+        self.fanciness = fanciness
 
     def get_fare(self):
         return super().get_fare() + self.flagfall
