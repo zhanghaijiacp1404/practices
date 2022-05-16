@@ -14,7 +14,7 @@ class UnreliableCar(Car):
 
     def drive(self, distance):
         """
-        Drive this UnreliableCar and return the distance if a random integer is less than reliability
+        Drive this UnreliableCar and return the distance driven if a random integer is less than reliability
         Otherwise return 0
         """
         if ri(0, 100) < self.reliability:
