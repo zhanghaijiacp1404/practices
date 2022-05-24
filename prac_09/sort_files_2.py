@@ -21,8 +21,10 @@ def main():
             file_type = os.path.splitext(file)[1].replace('.', '')
             category = input(f"What category would you like to sort {file_type} files into? ")
             # Only create the user-defined directory when that directory doesn't exists. Avoid crashing
-            if not os.path.isdir(category):
+            try:
                 os.mkdir(category)
+            except FileExistsError:
+                pass
             # Move the file to their belonging directories
             shutil.move(file, category + "\\")
 

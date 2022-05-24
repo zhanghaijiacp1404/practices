@@ -29,8 +29,10 @@ def main():
         if os.path.isfile(file):
             file_type = os.path.splitext(file)[1].replace(".", "")
             # Only create the directory when that directory doesn't exists. Avoid crashing
-            if not os.path.isdir(file_type):
+            try:
                 os.mkdir(file_type)
+            except FileExistsError:
+                pass
             # Move the file to their belonging directory
             shutil.move(file, file_type + '\\')
 
