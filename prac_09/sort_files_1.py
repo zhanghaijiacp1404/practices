@@ -27,14 +27,14 @@ def main():
     for file in files:
         # Only handling the file if that file exists
         if os.path.isfile(file):
-            file_type = os.path.splitext(file)[1].replace(".", "")
+            suffix = os.path.splitext(file)[1].replace(".", "")
             # Only create the directory when that directory doesn't exists. Avoid crashing
             try:
-                os.mkdir(file_type)
+                os.mkdir(suffix)
             except FileExistsError:
                 pass
             # Move the file to their belonging directory
-            shutil.move(file, file_type + '\\')
+            shutil.move(file, suffix + '\\')
 
 
 if __name__ == '__main__':
