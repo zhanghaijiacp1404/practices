@@ -28,8 +28,19 @@ def main():
 
 def get_fixed_filename(filename):
     """Return a 'fixed' version of filename."""
-    new_name = filename.replace(" ", "_").replace(".TXT", ".txt")
-    return new_name
+    filename = list(filename)
+    for index, char in enumerate(filename, 0):
+        try:
+            # change the pattern of such "AmericanBook" to "American_Book"
+            if filename[index].islower() and filename[index+1].isupper():
+                filename.insert(index + 1, '_')
+        except IndexError:
+            pass
+
+    fixed_filename = ""
+    for item in filename:
+        fixed_filename += item
+    return fixed_filename.title().replace(" ", "_").replace(".Txt", ".txt")
 
 
 main()
