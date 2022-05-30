@@ -1,4 +1,7 @@
-"""A simple script to apply and test wikipedia API."""
+"""
+A simple script to apply and test wikipedia API.
+Output the webpage's title, summary, and URL based on user input webpage title.
+"""
 import wikipedia
 
 
@@ -15,6 +18,7 @@ def main():
             print(webpage.url)
         except wikipedia.exceptions.DisambiguationError as e:
             print(e.options)
+
         title = input("Enter page title: ")
 
 
